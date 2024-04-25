@@ -61,7 +61,7 @@ public class WorkController {
     }
 
     @GetMapping("/jenkins")
-    public WorkResponseDTO debugMsg() {
+    public String debugMsg() {
         System.out.println(">>> debug Work Ctrl GET: /jenkins ");
         return "success" ;
     }
