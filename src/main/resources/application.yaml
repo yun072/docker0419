@@ -1,0 +1,19 @@
+#docker-copmose.yaml에 설정한 환경변수와 맞춰줄것(즉 갖고 들어올 것)
+server:
+    port: 8888
+
+spring:
+    datasource:
+        driver-class-name: org.mariadb.jdbc.Driver
+        # local db
+        # url: jdbc:mariadb://localhost:3306/encore?useUnicode=true
+        # username: root
+        # password: 123456789
+        
+        # cloud db
+        url: jdbc:mariadb://localhost:6033/encore?useUnicode=true # docker-compose.yaml의  "    MARIADB_DATABASE: encore, ports:- "6033:3306"와 맞춰줄것"
+        username: work_user    #root
+        password: work_passwd  #123456789
+
+mybatis:
+    mapper-locations: mappers/*.xml
